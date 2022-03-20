@@ -1,5 +1,5 @@
 # 42-CPP-Piscines
-###CPP_00-ex00
+### CPP_00-ex00
 Можно юзать системную штуку (char)toupper
 
 ```
