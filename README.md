@@ -74,9 +74,9 @@ int main()
 <details>
   <summary> CPP_01-ex00 </summary>
 Два способа объявить зомби
-Zombie stackZombie = Zombie("stackZombie");\
-Zombie *heapZombie = newZombie("heapZombie");\
-Области хранения данных:\
+```Zombie stackZombie = Zombie("stackZombie");```
+```Zombie *heapZombie = newZombie("heapZombie");```
+Области хранения данных: \
 1. [text area] \
 где хранится код программы, которую мы запускаем
 2. [data] \
