@@ -137,3 +137,10 @@ malloc and free - heap
 new выделяет память и вызывает конструктор,
 delete фришит и вызывает деструктор
 </details>
+
+<details>
+  <summary> CPP_01-ex01 </summary>
+## Делаем вот что
+Создаём функцию, которая создает массив зомби с помощью созданного ранее класса и возвращает адрес на первого зомби, т.е. создаём [массив объектов](https://www.geeksforgeeks.org/array-of-objects-in-c-with-examples/), содержащий объекты(зомби). Массив объектов должен быть размещен в области кучи. 
+```Zombie* zombieHorde( int N, std::string name );```
+</details>
