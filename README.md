@@ -235,4 +235,19 @@ int x = 0;
 ```
 <img width="332" alt="Снимок экрана 2022-03-28 в 16 22 23" src="https://user-images.githubusercontent.com/84707645/160407107-d581cbdf-d924-44eb-accb-0faf6c2f80c6.png">
 
+```
+	int a = 10;
+	std::cout << "addr a : " << &a << std::endl;
+	int b = 15;
+	std::cout << "addr b : " << &b << std::endl;
+	int *p;
+	std::cout << "p      : " << p << std::endl;
+	p = &a;
+	std::cout << "p to a : " << p << std::endl;
+	p = &b;
+	std::cout << "p to b : " << p << std::endl;
+```
+<img width="249" alt="Снимок экрана 2022-03-28 в 16 33 21" src="https://user-images.githubusercontent.com/84707645/160409180-db8068e0-ef90-448a-860d-428fad6bb768.png">
+	
+
 </details>
