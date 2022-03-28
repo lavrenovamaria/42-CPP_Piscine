@@ -196,4 +196,43 @@ std::string& stringREF = s; //reference// & - ссылка на строку // 
 stringPTR = &s; 
 	
 ```* = &```
+	
+```
+int x = 0;
+	int y = 0;
+	std::cout << "+---------------------------------+" << std::endl;
+	std::cout << "int y = 0: " << y << std::endl;
+	std::cout << "int x = 0: " << x << std::endl;
+	int *p = &x;
+	int *q = &y;
+	std::cout << "+---------------------------------+" << std::endl;
+	std::cout << "int *q = &y: " << y << std::endl;
+	std::cout << "int *p = &x: " << x << std::endl;
+	std::cout << "now adress y: " << *p << std::endl;
+	std::cout << "now adress x: " << *q << std::endl;
+	std::cout << "+---------------------------------+" << std::endl;
+	int **pp = &p;
+	std::cout << "**pp = &p: " << y << std::endl;
+	std::cout << "**pp = &p: " << x << std::endl;
+	std::cout << "now adress: " << **pp << std::endl;
+	std::cout << "+---------------------------------+" << std::endl;
+	**pp = 2;
+	std::cout << "**pp = 2: " << y << std::endl;
+	std::cout << "**pp = 2: " << x << std::endl;
+	std::cout << "now adress: " << **pp << std::endl;
+	std::cout << "+---------------------------------+" << std::endl;
+	pp = &q; // *pp is now q
+	std::cout << "pp = &q: " << y << std::endl;
+	std::cout << "pp = &q: " << x << std::endl;
+	std::cout << "now adress: " << pp << std::endl;
+	**pp = 4;
+	std::cout << "now adress: " << pp << std::endl;
+
+	//assert(y == 4);
+	//assert(x == 2);
+	std::cout << "y: " << y << std::endl;
+	std::cout << "x: " << x << std::endl;
+```
+<img width="332" alt="Снимок экрана 2022-03-28 в 16 22 23" src="https://user-images.githubusercontent.com/84707645/160407107-d581cbdf-d924-44eb-accb-0faf6c2f80c6.png">
+
 </details>
