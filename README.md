@@ -251,3 +251,9 @@ int x = 0;
 	
 
 </details>
+
+<details>
+  <summary> CPP_01-ex03 </summary>
+Мейник дан, по нему надо понять как жить
+
+</details>
