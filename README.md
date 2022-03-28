@@ -257,3 +257,20 @@ int x = 0;
 Мейник дан, по нему надо понять как жить
 
 </details>
+
+<details>
+  <summary> CPP_00-ex04 </summary>
+ifstream сокрашщение для input file stream -  считать данные из файл(чтение), ввода
+	
+ofstream - сделать запись в файл(запись), вывода
+	
+Можно сделать двумя способами
+	
+```
+std::ifstream	read_file;
+read_file.open(file_name);
+```
+```
+std::ifstream	read_file(file_name);
+```
+</details>
