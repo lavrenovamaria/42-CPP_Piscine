@@ -22,8 +22,19 @@ class DateClass
 
 int main()
 {
-	DateClass birthDay { 2019, 7, 28 };
+	DateClass birthDay;
 
-	birthDay.m_year = 1992;
+	birthDay.m_year = 1991;
+	birthDay.m_month = 3;
+	birthDay.m_day = 12;
 	birthDay.print();
+
+	std::cout << std::endl;
+
+	DateClass birthDay2;
+	birthDay2.m_year = 1990;
+	birthDay2.m_month = 1;
+	birthDay2.m_day = 23;
+	birthDay2.print();
+	std::cout << std::endl;
 }
