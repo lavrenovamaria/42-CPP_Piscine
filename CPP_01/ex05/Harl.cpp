@@ -23,7 +23,7 @@ void Harl::complain(std::string level)
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	int i = 0;
-	for (; levels[i] != level && i <= 4; i++);
+	for (; levels[i] != level && i < 4; i++);
 	void (Harl::*point_f)(); // указатель на определенную функцию в классе
 
 	switch (i)
@@ -40,9 +40,6 @@ void Harl::complain(std::string level)
 		case 3: std::cout << "[ " << level << " ]" << std::endl;
 			point_f = &Harl::error;
 			break;
-		default:
-			std::cout << "unknown " << std::endl;
-			exit(1);
 	}
 	(this->*point_f)(); // после выхода из цикла
 }

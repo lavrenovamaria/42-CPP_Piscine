@@ -9,9 +9,18 @@ int	main(int argc, char **argv)
 		std::cout << "[ ERROR ARGS ]" << std::endl;
 	if (argc > 1)
 	{
-		harl.complain("DEBUG");
-		harl.complain("INFO");
-		harl.complain("WARNING");
-		harl.complain("ERROR");
+		std::string i;
+		i = argv[1];
+		if(i == "debug" || i == "info" || i == "warning" || i == "error")
+		{
+			harl.complain("DEBUG");
+			harl.complain("INFO");
+			harl.complain("WARNING");
+			harl.complain("ERROR");
+		}
+		else
+		{
+			std::cout << "unknown " << std::endl;
+		}
 	}
 }
