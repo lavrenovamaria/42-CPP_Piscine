@@ -274,3 +274,19 @@ read_file.open(file_name);
 std::ifstream	read_file(file_name);
 ```
 </details>
+
+<details>
+  <summary> CPP_00-ex05 </summary>
+std::find Функция выполняет функцию поиска указанного элемента в заданном диапазоне.
+	
+Прототип функции выглядит следующим образом.
+
+InputIterator find (InputIterator начала, InputIterator конца, const T& val)
+
+first: указывает начальную позицию.
+
+last: указывает конечную позицию.
+
+val: указывает значение для поиска.
+
+</details>
