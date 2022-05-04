@@ -77,6 +77,7 @@ int main()
 
 <details>
   <summary>CPP_04-ex00 </summary>
+
 ```
 #include <iostream>
 using namespace std;//просто чтобы не писать "std::"" каждый раз
@@ -143,4 +144,5 @@ int main() {
 	return 0;
 }
 ```
+
 </details>
