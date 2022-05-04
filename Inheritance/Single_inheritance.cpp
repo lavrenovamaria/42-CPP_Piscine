@@ -46,6 +46,14 @@ class Uzi: public Gun{
 		}
 };
 
+class Player{
+	public:
+	void Shoot(Gun *gun)
+	{
+		gun->Shoot();
+	}
+};
+
 int main() {
 	Gun gun;//создали объект класса Gun
 	Uzi uzi;//объект класса Uzi, который наследник класса Gun
@@ -58,7 +66,10 @@ int main() {
 	//либо ссылаться на любой другой класс, который унаследован от него
 
 	weapon->Shoot();
-	//если 1, то будет Bang! Bang! Bang!
-	//если 2, то будет Bang!
+	//если расскоментить 1, то будет Bang! Bang! Bang!
+	//если расскоментить 2, то будет Bang!
+	Player player;
+	player.Shoot(&gun);//передаем ссылку, потому что там принимает указатель
+	//либо можем вместо &gun передать &uzi
 	return 0;
 }
