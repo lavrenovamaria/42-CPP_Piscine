@@ -4,6 +4,8 @@
 #include <iostream>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
 	private:
@@ -37,6 +39,7 @@ class Bureaucrat
 				public:
 						virtual const char *what() const throw();
 			};
+			void  beSigned(Form &obj);
 };
 std::ostream& operator<<(std::ostream &cout, Bureaucrat const &src);
 //Перегрузка << оператора для ostream, который выводит что-то

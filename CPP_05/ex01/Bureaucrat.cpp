@@ -61,3 +61,14 @@ std::ostream& operator<<(std::ostream &cout, Bureaucrat const &src){
 	cout << src.getGrade() << std::endl;
 	return cout;
 }
+
+void  Bureaucrat::beSigned(Form &obj){
+	try
+	{
+		/* code */
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+}
