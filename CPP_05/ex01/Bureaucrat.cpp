@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(){
 
@@ -65,10 +66,21 @@ std::ostream& operator<<(std::ostream &cout, Bureaucrat const &src){
 void  Bureaucrat::beSigned(Form &obj){
 	try
 	{
-		/* code */
+		obj.beSigned(*this);
+		std::cout << _name << " подписывает форму " << obj.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
+		if (getGrade() <= obj.getGradeExecute() && getGrade() >= obj.getGradeSignature())
+		{
+			std::cout << _name << " не может подписать форму " << obj.getName() << std::endl;
+			std::cout << "потому что для " << obj.getName() << std::endl;
+		}
+		else
+		{
+			std::cout << _name << " не может выполнить форму " << obj.getName() << std::endl;
+			std::cout  << "потому что для " << obj.getName() << std::endl;
+		}
 		std::cerr << e.what() << '\n';
 	}
 }

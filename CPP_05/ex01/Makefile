@@ -1,6 +1,6 @@
 NAME		= 	ToBeBureaucrat
-HDRS		=	Bureaucrat.hpp
-SRCS 		= 	Bureaucrat.cpp main.cpp
+HDRS		=	Bureaucrat.hpp Form.hpp
+SRCS 		= 	Bureaucrat.cpp Form.cpp main.cpp
 OBJS		=	$(patsubst %.cpp, %.o,$(SRCS))
 
 CC			= 	c++

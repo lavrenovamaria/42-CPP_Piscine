@@ -1,87 +1,35 @@
-#include  <exception>
-#include  <iostream>
-
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
+// Исключение (exception)
 
 int main()
 {
+	std::cout << std::endl;
+
+	Form blank("[Его величество документ №123]", 4, 18);
+	std::cout << "Form : " << blank << std::endl;
+// 4 число — grade, необходимый для подписания
+// 18 число — grade, необходимый для выполнения
+	Bureaucrat a1("Mister Kek", 0);
+	Bureaucrat b1("Mista Lol", 16);
+	Bureaucrat c1("Fella", 80);
+
+	std::cout << "-------------------" << std::endl;
+
 	try
 	{
-		Bureaucrat p1("Mister Kek", 120);
-		Bureaucrat p2("Mister Lol", 10);
+		a1.beSigned(blank);
+		std::cout << "---------------" << std::endl;
 
-		p1.decreaseGrade();
-		std::cout << p1 << std::endl;
+		b1.beSigned(blank);
+		std::cout << "---------------" << std::endl;
 
-		p2.increaseGrade();
-		std::cout << p2 << std::endl;
-
-		p1.increaseGrade();
-		std::cout << p1 << std::endl;
+		c1.beSigned(blank);
+		std::cout << "---------------" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
+	return (0);
 }
-
-/*
-	try(пытаться) — начало блока исключений
-	catch(поймать) — начало блока, "ловящего" исключение
-	throw(бросить) —  ключевое слово, "создающее" ("возбуждающее") исключение
-*/
-
-// Обработка исключений - исключительных ситуация (проблем в работе программы)
-// std::exception - базовый клас с++ обрабатывающий исключения
-// Все классы обработки исключений создаются путем наследования его
-// Функция what возвращает: указатель на строку с завершающим нулем с поясняющей информацией
-
-//std::exception can может использоваться как он есть
-//но если юзер хочет определенную ошибку, то он может унаследовать
-//std::exception и задефайнить ошибку как в коде выше(CustomException)
-
-// class  CustomException
-// 	: 	public std :: exception
-// {
-// 	public :
-// 		const  char *  what ( void )  const  throw ( )
-// 		{
-// 			return  ( "CustomException" ) ;
-// 		}
-// } ;
-
-// int  main ( void )
-// {
-// 	while  ( true )
-// 	{
-// 		try
-// 		{
-// 			std ::string key ;
-// 			while  ( true )
-// 			{
-// 				std :: cin >> key ;
-// 				if  ( key ==  "cause" )
-// 					throw  ( CustomException ( ) ) ;
-// 				if  ( key ==  "int" )
-// 				  throw  ( 10 ) ;
-// 				if  ( key ==  "double" )
-// 					throw  ( 0.5 ) ;
-// 			}
-// 		}
-// 		catch  ( std ::exception & e )
-// 		{
-// 			std :: cerr << e . what ( )  << std :: endl ;
-// 		}
-// 		catch  ( int & i )
-// 		{
-// 			std :: cerr <<  "Int Caught"  << std :: endl ;
-// 		}
-// 		catch  ( double & d )
-// 		{
-// 			std :: cerr <<  "Double Caught"  << std ::endl ;
-// 		}
-// 		std :: cout <<  "Program End Normally"  << std :: endl ;
-// 	}
-// 	return  ( 0 ) ;
-// }
-
