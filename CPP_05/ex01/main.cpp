@@ -10,14 +10,15 @@ int main()
 	std::cout << "Form : " << blank << std::endl;
 // 4 число — grade, необходимый для подписания
 // 18 число — grade, необходимый для выполнения
-	Bureaucrat a1("Mister Kek", 0);
-	Bureaucrat b1("Mista Lol", 16);
-	Bureaucrat c1("Fella", 80);
-
+	
 	std::cout << "-------------------" << std::endl;
 
 	try
 	{
+		Bureaucrat a1("Mister Kek", 333);
+		Bureaucrat b1("Mista Lol", 16);
+		Bureaucrat c1("Fella", 1);
+
 		a1.beSigned(blank);
 		std::cout << "---------------" << std::endl;
 

@@ -8,7 +8,7 @@ int main()
 	try
 	{
 		Bureaucrat p1("Mister Kek", 120);
-		Bureaucrat p2("Mister Lol", 10);
+		Bureaucrat p2("Mister Lol", 5);
 
 		p1.decreaseGrade();
 		std::cout << p1 << std::endl;
@@ -19,7 +19,7 @@ int main()
 		p1.increaseGrade();
 		std::cout << p1 << std::endl;
 	}
-	catch(const std::exception& e)
+	catch(const std::exception& e)//константная ссылка на объекти типа xeption
 	{
 		std::cerr << e.what() << std::endl;
 	}

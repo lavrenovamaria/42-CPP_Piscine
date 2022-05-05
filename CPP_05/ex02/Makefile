@@ -1,6 +1,6 @@
-NAME		= 	FormUp
-HDRS		=	Bureaucrat.hpp Form.hpp
-SRCS 		= 	Bureaucrat.cpp Form.cpp main.cpp
+NAME		= 	Form28B
+HDRS		=	Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+SRCS 		= 	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS		=	$(patsubst %.cpp, %.o,$(SRCS))
 
 CC			= 	c++

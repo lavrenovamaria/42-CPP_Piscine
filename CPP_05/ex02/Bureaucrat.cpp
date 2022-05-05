@@ -84,3 +84,26 @@ void  Bureaucrat::beSigned(Form &obj){
 		std::cerr << e.what() << '\n';
 	}
 }
+
+
+void Bureaucrat::executeForm(Form const &obj){
+	try
+	{
+		obj.execute(*this);
+		std::cout << _name << " выполняет форму " << obj.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		if (getGrade() <= obj.getGradeExecute() && getGrade() >= obj.getGradeSignature())
+		{
+			std::cout << _name << " не может выполнить форму " << obj.getName() << std::endl;
+			std::cout << "потому что для " << obj.getName() << std::endl;
+		}
+		else
+		{
+			std::cout << _name << " не может выполнить форму " << obj.getName() << std::endl;
+			std::cout  << "потому что для " << obj.getName() << std::endl;
+		}
+		std::cerr << e.what() << '\n';
+	}
+}
