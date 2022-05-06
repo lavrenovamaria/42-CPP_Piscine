@@ -7,39 +7,39 @@ template <typename T>
 class Array
 {
 	private:
-		T *arraySecond;
-		unsigned int len;
+		T *_array;
+		unsigned int _len;
 	public:
 		Array() {};
 		~Array() {
-			if (arraySecond)
-				delete[]arraySecond;
+			if (_array)
+				delete[]_array;
 		};
 		Array(unsigned int n)
 		{
-			len = n;
-			arraySecond = new T[n];
+			_len = n;
+			_array = new T[n];
 		};
 		Array(Array const &src)
 		{
-			len = src.len;
-			for(int i = 0; i < len; i++)
-				arraySecond[i] = src.array[i];
+			_len = src._len;
+			for(int i = 0; i < _len; i++)
+				_array[i] = src.array[i];
 		};
 		Array& operator=(Array const &src)
 		{
 			if (this != &src)
 			{
-				len = src.len;
-				arraySecond = src.array;
+				_len = src._len;
+				_array = src.array;
 			}
 			return (*this);
 		};
 		T& operator[](unsigned int index)
 		{
-			if (index < 0 || index > len)
+			if (index < 0 || index > _len)
 				throw OutOfBoundsException();
-			return (arraySecond[index]);
+			return (_array[index]);
 		};
 		class OutOfBoundsException : public std::exception
 		{
@@ -51,7 +51,7 @@ class Array
 		};
 		unsigned int size() 
 		{
-			return (len);
+			return (_len);
 		};
 };
 
