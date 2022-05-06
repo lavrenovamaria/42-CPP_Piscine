@@ -148,7 +148,7 @@ int main() {
 </details>
 
 <details>
-  <summary>Простейший пример инкапсуляции </summary>
+  <summary>Простейший пример инкапсуляции(get, set) </summary>
 
 ```c
 #include <iostream>
