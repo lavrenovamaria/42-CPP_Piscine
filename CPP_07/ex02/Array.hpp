@@ -7,45 +7,39 @@ template <typename T>
 class Array
 {
 	private:
-		T *array2;
+		T *arraySecond;
 		unsigned int len;
 	public:
 		Array() {};
 		~Array() {
-			if (array2)
-				delete[]array2;
+			if (arraySecond)
+				delete[]arraySecond;
 		};
 		Array(unsigned int n)
 		{
 			len = n;
-			array2 = new T[n];
+			arraySecond = new T[n];
 		};
-		Array(Array const &orig)
+		Array(Array const &src)
 		{
-			len = orig.len;
-			int i = 0;
-			while(i < len)
-			{
-				array2[i] = orig.array[i];
-				i++;
-			}
+			len = src.len;
+			for(int i = 0; i < len; i++)
+				arraySecond[i] = src.array[i];
 		};
-		Array& operator=(Array const &orig)
+		Array& operator=(Array const &src)
 		{
-			if (this != &orig)
+			if (this != &src)
 			{
-				len = orig.len;
-				array2 = orig.array;
+				len = src.len;
+				arraySecond = src.array;
 			}
-				
 			return (*this);
 		};
-
-		T& operator[](unsigned int index)// Перегрузка оператора индексации
+		T& operator[](unsigned int index)
 		{
 			if (index < 0 || index > len)
 				throw OutOfBoundsException();
-			return (array2[index]);
+			return (arraySecond[index]);
 		};
 		class OutOfBoundsException : public std::exception
 		{

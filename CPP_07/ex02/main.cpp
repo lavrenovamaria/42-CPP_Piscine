@@ -21,7 +21,7 @@ int main()
     try
     {
         for(i = 0; i < arrayTwo.size(); i++)
-            std::cout << '|' << arrayTwo[i] << '|';
+            std::cout << '|' << arrayTwo[i];
     }
     catch(const std::exception& e)
     {
