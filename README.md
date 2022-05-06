@@ -78,7 +78,7 @@ int main()
 <details>
   <summary>CPP_04-ex00 </summary>
 
-```
+```c
 #include <iostream>
 using namespace std;//просто чтобы не писать "std::"" каждый раз
 
@@ -150,7 +150,7 @@ int main() {
 <details>
   <summary>Простейший пример инкапсуляции </summary>
 
-```
+```c
 #include <iostream>
 using namespace std;//просто чтобы не писать "std::"" каждый раз
 
@@ -186,7 +186,8 @@ int main()
 
 <details>
   <summary>Template это формочка для кексика, но не сам кексик, мы отдаём компилятору формочку, а он нам печёт кексики </summary>
-```
+
+```c
 #ifndef WHATEVER_HPP
 #define WHATEVER_HPP
 
@@ -219,4 +220,5 @@ T min(T a, T b){
 //(instantiation). Его результатом является экземпляр
 //(instance) шаблона
 ```
+
 </details>
