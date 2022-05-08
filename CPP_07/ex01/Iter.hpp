@@ -5,14 +5,14 @@
 // 2 - Длина массива
 // 3 - Функция, которая будет вызываться для каждого элемента массива
 template< typename T>
-void iter(T* arrPtr, int size, void (*f)(T &arrPtr))
+void iter(T* arrPtr, int size, void (*f)(const T &arrPtr))
 {
 	for (int i = 0; i < size; i++)
 		f(arrPtr[i]);
 }
 
 template <typename T>
-void f(T &arg)  
+void f(T &arg)
 {
 	std::cout  << "|" << arg << "| " << std::endl;
 }

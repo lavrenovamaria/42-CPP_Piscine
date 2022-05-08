@@ -28,7 +28,7 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() <= getGradeExecute())
 	{
-    	std::cout << "Вот тот самый " <<
+    	std::cout << "Вот тот самый" <<
 		executor.getName() << " был помилован Зафодом Библеброксом " << std::endl;
 	}
 	else
@@ -38,5 +38,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target) :
 Form("New_PresidentialPardonForm", 25, 5, target)
 {
-
+	
 }

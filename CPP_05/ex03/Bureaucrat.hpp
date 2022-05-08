@@ -4,6 +4,8 @@
 #include <iostream>
 #include <exception>
 
+class Form;
+
 class Bureaucrat
 {
 	private:
@@ -27,14 +29,18 @@ class Bureaucrat
 			//Обработка исключений - исключительных ситуаций в работе программы
 			//std::exception - базовый клас с++ обрабатывающий исключения
 			//Все классы обработки исключений создаются путем наследования его
-			class GradeTooHighException: public std::exception{
+			class GradeTooHighException: public std::exception
+			{
 				public:
 						virtual const char *what() const throw();
 			};
-			class GradeTooLowException: public std::exception{
+			class GradeTooLowException: public std::exception
+			{
 				public:
 						virtual const char *what() const throw();
 			};
+			void beSigned(Form &obj);
+			void executeForm(Form const &obj);
 };
 std::ostream& operator<<(std::ostream &cout, Bureaucrat const &src);
 //Перегрузка << оператора для ostream, который выводит что-то
