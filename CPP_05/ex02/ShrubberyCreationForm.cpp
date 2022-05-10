@@ -2,32 +2,24 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm()
-{
+ShrubberyCreationForm::ShrubberyCreationForm(){}
 
-}
+ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
-{
-
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &orig): 
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &orig):
 Form(orig)
-{
-
-}
+{}
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &orig)
 {
-    Form::operator=(orig);
-	return (*this); 
+	Form::operator=(orig);
+	return (*this);
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target) :
 Form("New_ShrubberyCreationForm", 145, 137, target)
 {
-	
+
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat& executor)const

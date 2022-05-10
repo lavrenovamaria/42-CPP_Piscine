@@ -1,13 +1,9 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(){
+Bureaucrat::Bureaucrat(){}
 
-}
-
-Bureaucrat::~Bureaucrat(){
-
-}
+Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src){
 	_grade = src.getGrade();
@@ -20,12 +16,10 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &src){
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name), _grade(grade){
-	if (getGrade() < 1)
-	{
+	if (getGrade() < 1){
 		throw Bureaucrat::GradeTooHighException();
 	}
-	else if(getGrade() > 150)
-	{
+	else if(getGrade() > 150){
 		throw Bureaucrat::GradeTooLowException();
 	}
 }

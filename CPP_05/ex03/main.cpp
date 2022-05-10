@@ -9,7 +9,6 @@ int main()
 {
 	Intern intern;
 	Form*  nameForm1;
-
 	try
 	{
 		nameForm1 = intern.makeForm("ShrubberyCreationForm", "Shrubbery for you");

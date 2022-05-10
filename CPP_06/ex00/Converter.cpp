@@ -21,33 +21,33 @@ const char *Converter::impossibleToConvert::what() const throw(){
 }
 
 void Converter::setValue(double num){
-	this->_num = num;
+	_num = num;
 }
 
 double Converter::getValue()const{
-	return this->_num;
+	return _num;
 }
 
 void Converter::convertToChar()const{
 	std::cout << "char: ";
-	if (!isascii(static_cast<int>(this->_num)))
+	if (!isascii(static_cast<int>(_num)))
 		throw Converter::impossibleToConvert();
-	if (!isprint(static_cast<int>(this->_num)))
+	if (!isprint(static_cast<int>(_num)))
 		throw Converter::notDisplayable();
 
-	std::cout << static_cast<char>(this->_num) << std::endl;
+	std::cout << static_cast<char>(_num) << std::endl;
 }
 
 void Converter::convertToInt()const{
 	std::cout << "int: ";
 
-	if (this->_num > std::numeric_limits<int>::max() || \
-		this->_num < std::numeric_limits<int>::min() || \
-		std::isnan(this->_num) || std::isinf(this->_num))
+	if (_num > std::numeric_limits<int>::max() || \
+		_num < std::numeric_limits<int>::min() || \
+		std::isnan(_num) || std::isinf(_num))
 		throw Converter::impossibleToConvert();
 
-	std::cout << static_cast<int>(this->_num) << std::endl;
+	std::cout << static_cast<int>(_num) << std::endl;
 }
 
-void convertToFloat()const;
-void convertToDouble()const;
+// void convertToFloat()const;
+// void convertToDouble()const;

@@ -13,6 +13,12 @@
 //static_cast позволяет изменять только типы, которые преобразованы логически
 //static_cast <тип к которому преобразуем> (переменная)
 //static_cast <char> (val)
+
+
+//char : ’c’, ’a’... 42 - '*'
+//int : 0, -42, 42...
+//float : 0.0, -4.2, 4.2...: -inff, +inff and nanf
+//double : 0.0, -4.2, 4.2...: -inf, +inf and nan.
 class Converter{
 	private:
 		double _num;

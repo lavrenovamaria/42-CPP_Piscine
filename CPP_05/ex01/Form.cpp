@@ -28,33 +28,27 @@ Form::Form(std::string const &src, const int gradeToSign, const int gradeToExec)
 	_gradeToSign(gradeToSign),
 	_gradeToExec(gradeToExec)
 {
-	if (getGradeSignature() < 1 || getGradeExecute() < 1)
-	{
+	if (getGradeSignature() < 1 || getGradeExecute() < 1){
 		throw Form::GradeTooHighException();
 	}
-	else if (getGradeSignature() > 150 || getGradeExecute() > 150)
-	{
+	else if (getGradeSignature() > 150 || getGradeExecute() > 150){
 		throw Form::GradeTooLowException();
 	}
 }
 
-std::string const Form::getName() const
-{
+std::string const Form::getName() const{
 	return (_name);
 }
 
-int Form::getGradeExecute() const
-{
+int Form::getGradeExecute() const{
 	return (_gradeToExec);
 }
 
-int Form::getGradeSignature() const
-{
+int Form::getGradeSignature() const{
 	return (_gradeToSign);
 }
 
-bool Form::getSign() const
-{
+bool Form::getSign() const{
 	return (_signed);
 }
 
@@ -78,14 +72,10 @@ std::ostream& operator<<(std::ostream &cout, Form const &orig)
 
 void Form::beSigned(Bureaucrat &obj)
 {
-	if (obj.getGrade() <= getGradeSignature())
-	{
-		// <bureaucrat> signs <form>
+	if (obj.getGrade() <= getGradeSignature()){
 		_signed = true;
 	}
-	else
-	{
-		// <bureaucrat> cannot sign <form> because <reason>
+	else{
 		throw Form::GradeTooLowException();
 	}
 }

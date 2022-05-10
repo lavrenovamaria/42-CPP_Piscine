@@ -9,14 +9,14 @@
 
 class RobotomyRequestForm : public Form
 {
-    
+
 public:
-    RobotomyRequestForm();
-    ~RobotomyRequestForm();
-    RobotomyRequestForm(RobotomyRequestForm const &orig);
-    RobotomyRequestForm& operator=(RobotomyRequestForm const &orig);
-    
-    void execute(Bureaucrat const &executor) const;
+	RobotomyRequestForm();
+	~RobotomyRequestForm();
+	RobotomyRequestForm(RobotomyRequestForm const &orig);
+	RobotomyRequestForm& operator=(RobotomyRequestForm const &orig);
+
+	void execute(Bureaucrat const &executor) const;
 	RobotomyRequestForm(std::string const &target);
 };
 

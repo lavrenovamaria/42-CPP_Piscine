@@ -2,21 +2,13 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm()
-{
+RobotomyRequestForm::RobotomyRequestForm(){}
 
-}
-
-RobotomyRequestForm::~RobotomyRequestForm()
-{
-
-}
+RobotomyRequestForm::~RobotomyRequestForm(){}
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &orig)
 : Form(orig)
-{
-
-}
+{}
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &orig)
 {
@@ -26,9 +18,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm const &o
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target) :
 Form("New_RobotomyRequestForm", 72, 45, target)
-{
-	
-}
+{}
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {

@@ -2,33 +2,23 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
-{
+PresidentialPardonForm::PresidentialPardonForm(){}
 
-}
-
-PresidentialPardonForm::~PresidentialPardonForm()
-{
-
-}
+PresidentialPardonForm::~PresidentialPardonForm(){}
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &orig)
 : Form(orig)
-{
+{}
 
-}
-
-PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const &orig)
-{
+PresidentialPardonForm& PresidentialPardonForm::operator=(PresidentialPardonForm const &orig){
 	Form::operator=(orig);
 	return (*this);
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor) const
-{
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const{
 	if (executor.getGrade() <= getGradeExecute())
 	{
-    	std::cout << "Вот тот самый " <<
+		std::cout << "Вот тот самый " <<
 		executor.getName() << " был помилован Зафодом Библеброксом " << std::endl;
 	}
 	else

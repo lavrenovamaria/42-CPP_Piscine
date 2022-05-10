@@ -5,9 +5,7 @@ Form::Form(){
 	_signed = false;
 }
 
-Form::~Form(){
-
-}
+Form::~Form(){}
 
 Form::Form(Form const &src){
 	_gradeToSign = src.getGradeSignature();
@@ -29,39 +27,32 @@ Form::Form(std::string const src, int gradeToSign, int gradeToExec, std::string 
 	_gradeToExec(gradeToExec),
 	_target(new_target)
 {
-	if (getGradeSignature() < 1 || getGradeExecute() < 1)
-	{
+	if (getGradeSignature() < 1 || getGradeExecute() < 1){
 		throw Form::GradeTooHighException();
 	}
-	else if (getGradeSignature() > 150 || getGradeExecute() > 150)
-	{
+	else if (getGradeSignature() > 150 || getGradeExecute() > 150){
 		throw Form::GradeTooLowException();
 	}
 }
 
-std::string const Form::getName() const
-{
+std::string const Form::getName() const{
 	return (_name);
 }
 
-int Form::getGradeExecute() const
-{
+int Form::getGradeExecute() const{
 	return (_gradeToExec);
 }
 
-int Form::getGradeSignature() const
-{
+int Form::getGradeSignature() const{
 	return (_gradeToSign);
 }
 
-bool Form::getSign() const
-{
+bool Form::getSign() const{
 	return (_signed);
 }
 
-std::string const Form::getTarget() const
-{
-    return (_target);
+std::string const Form::getTarget() const{
+	return (_target);
 }
 
 const char *Form::GradeTooHighException::what() const throw(){
@@ -77,8 +68,7 @@ const char	*Form::FormIsNoSignedException::what() const throw()
 	return "Form is not signed exception";
 }
 
-std::ostream& operator<<(std::ostream &cout, Form const &orig)
-{
+std::ostream& operator<<(std::ostream &cout, Form const &orig){
 	cout << orig.getName() << std::endl;
 
 	cout << "Grade, необходимый для подписи " << orig.getGradeSignature() << std::endl;
@@ -87,16 +77,11 @@ std::ostream& operator<<(std::ostream &cout, Form const &orig)
 	return (cout);
 }
 
-void Form::beSigned(Bureaucrat &obj)
-{
-	if (obj.getGrade() <= getGradeSignature())
-	{
-		// <bureaucrat> signs <form>
+void Form::beSigned(Bureaucrat &obj){
+	if (obj.getGrade() <= getGradeSignature()){
 		_signed = true;
 	}
-	else
-	{
-		// <bureaucrat> cannot sign <form> because <reason>
+	else{
 		throw Form::GradeTooLowException();
 	}
 }

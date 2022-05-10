@@ -1,13 +1,9 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat(){
+Bureaucrat::Bureaucrat(){}
 
-}
-
-Bureaucrat::~Bureaucrat(){
-
-}
+Bureaucrat::~Bureaucrat(){}
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src){
 	_grade = src.getGrade();
@@ -20,12 +16,10 @@ Bureaucrat& Bureaucrat::operator=(Bureaucrat const &src){
 }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade): _name(name), _grade(grade){
-	if (getGrade() < 1)
-	{
+	if (getGrade() < 1){
 		throw Bureaucrat::GradeTooHighException();
 	}
-	else if(getGrade() > 150)
-	{
+	else if(getGrade() > 150){
 		throw Bureaucrat::GradeTooLowException();
 	}
 }
@@ -64,20 +58,17 @@ std::ostream& operator<<(std::ostream &cout, Bureaucrat const &src){
 }
 
 void  Bureaucrat::beSigned(Form &obj){
-	try
-	{
+	try{
 		obj.beSigned(*this);
 		std::cout << _name << " подписывает форму " << obj.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
-		if (getGrade() <= obj.getGradeExecute() && getGrade() >= obj.getGradeSignature())
-		{
+		if (getGrade() <= obj.getGradeExecute() && getGrade() >= obj.getGradeSignature()){
 			std::cout << _name << " не может подписать форму " << obj.getName() << std::endl;
 			std::cout << "потому что для " << obj.getName() << std::endl;
 		}
-		else
-		{
+		else{
 			std::cout << _name << " не может выполнить форму " << obj.getName() << std::endl;
 			std::cout  << "потому что для " << obj.getName() << std::endl;
 		}
