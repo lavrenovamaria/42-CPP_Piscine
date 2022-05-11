@@ -57,6 +57,7 @@ void Converter::convertToInt()const{
 
 void Converter::convertToFloat()const{
 	std::cout << "float: ";
+	//thanks Bsunday for making it happen
 	//условно data - (_int)data == 0
 	//например есть флоат 1.1 (int)1.1 = 1, тип целочисленная часть
 	//если у числа нет штуки после точки, по сабжу нужно дописать .0, а стандартный конверт это не делает
@@ -73,8 +74,6 @@ void Converter::convertToFloat()const{
 
 void Converter::convertToDouble()const{
 		std::cout << "double: ";
-	// bool minus = this->_num < -1e-8;
-	// bool plus = this->_num > 1e-8;
 	if (std::isnan(_num))
 		std::cout << "nan" << std::endl;
 	else if (_num - static_cast<int>(_num) == 0 && !std::isnan(_num) && !std::isinf(_num))
@@ -82,7 +81,7 @@ void Converter::convertToDouble()const{
 	else if (std::isinf(_num) && !std::signbit(_num))
  		std::cout << "+inf" << std::endl;
 	else if (-1e-14 <= this->_num && this->_num <= 1e-14)
-        std::cout << "0.0" << std::endl;
+		std::cout << "0.0" << std::endl;
 	else
 		std::cout << static_cast<double>(_num) << std::endl;
 }
