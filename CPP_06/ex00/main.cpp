@@ -24,10 +24,10 @@ int			main(int argc, char **argv)
 			&& static_cast<std::string>(ptrEnd).length() == 1))
 				throw Converter::impossibleToConvert();
 			scalar.setValue(num);
+			scalar.convert("char");
 			scalar.convert("int");
 			scalar.convert("float");
 			scalar.convert("double");
-			scalar.convert("char");
 		}
 		else
 			std::cerr << "Error: count argc != 2" << std::endl;

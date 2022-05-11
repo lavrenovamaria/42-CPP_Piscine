@@ -2,8 +2,7 @@
 
 //Поведение функций класса лучше определять в cpp, а не в hpp
 Zombie::Zombie() {};
-Zombie::Zombie(std::string x)
-{
+Zombie::Zombie(std::string x){
 	_name = x;
 	std::cout << "NAME of our friend: " << _name << std::endl;
 }
