@@ -226,7 +226,7 @@ T min(T a, T b){
 <details>
   <summary>CPP_06-ex01 </summary>
 
-```
+```c
 #include <iostream>
 
 /*reinterpret_cast<type>(expr)
