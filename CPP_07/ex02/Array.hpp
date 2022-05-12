@@ -17,7 +17,7 @@ class Array
 		};
 		Array(unsigned int n){
 			_len = n;
-			_array = new T[n];
+			_array = new T[n]();
 		};
 		Array(Array const &src){
 			_len = src._len;
