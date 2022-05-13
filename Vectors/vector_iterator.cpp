@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	vector<char> v(10);
-	vector<char>::iterator p;
+	vector<char>::iterator p;//тип данных итератора р
 	int i;
 
 	p = v.begin();
