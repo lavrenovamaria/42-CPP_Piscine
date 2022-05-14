@@ -19,7 +19,7 @@ Span::Span(unsigned int n){
 
 //числа должны быть разные, если уже есть, то бросаем исключение
 void Span::addNumber(int num){
-	if(_vector.end() - _vector.begin() >= num)
+	if(_vector.size() >= num)
 		throw vectorIsFull();
 	_vector.push_back(num);
 }
@@ -33,10 +33,11 @@ void Span::addRange(std::vector<int>::iterator begin, std::vector<int>::iterator
 //std::adjacent_difference, чтобы найти разницу между соседними элементами
 int Span::shortestSpan(){
 	std::vector<int> tmp(_vector);//сохраняем существующие элементы
+	//std::vector<int>::iterator count = tmp.begin();
 	std::sort(std::begin(tmp), std::end(tmp));
 	std::adjacent_difference(std::begin(tmp), std::end(tmp), std::begin(tmp));
-	std::transform(std::begin(tmp), std::end(tmp), std::begin(tmp), [] ( const int& i) { return std::abs(i); });
-	return ((*std::min_element(std::begin(tmp), std::end(tmp))));
+	int min = *std::min_element(std::begin(tmp), std::end(tmp));
+	return min;
 }
 
 int Span::longestSpan(){

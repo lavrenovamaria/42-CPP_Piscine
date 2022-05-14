@@ -21,38 +21,32 @@ int main(){
 	std::cout << "adjacent array contains : ";
 	for(int i = 0; i < tmp.size(); i++) std::cout << tmp[i] << " ";
 	std::cout << "\n";
-	//std::transform(std::begin(tmp), std::end(tmp), std::begin(tmp), [] (int& i) { return std::abs(i); });
 	int min = *std::min_element(std::begin(tmp), std::end(tmp));
-	//min = std::abs(*count - *(count - 1));
 	std::cout << "min " << min;
-	//for(int i = 0; i < tmp.size(); i++) std::cout << tmp[i] << " ";
 }
 
-// CPP program to illustrate
-// std :: adjacent_difference
+	// try
+	// {
+	// 	srand(time(NULL));
+	// 	Span span = Span(15);
+	// 	std::vector<int> sp(15);
+	// 	for(int i = 0; i < 15; i++) span.addNumber(rand() % 200);
+	// 	std::cout << "Array contains : ";
+	// 	std::vector<int>::iterator count = sp.begin();
+	// 	std::cout << "Исходное содержимое: \n";
+	// 	count = sp.begin();
+	// 	while(count != sp.end()){
+	// 		std::cout << *count << " ";
+	// 		count++;
+	// 	}
+	// 	std::cout << "\n\n";
 
-#include <iostream> // std::cout
-#include <numeric> // std::adjacent_difference
-
-// Driver code
-// int main()
-// {
-// 	int val[] = { 1, 2, 3, 5, 9, 11, 12 };
-// 	int n = sizeof(val) / sizeof(val[0]);
-// 	int result[7];
-
-// 	// Array contains
-// 	std::cout << "Array contains :";
-// 	for (int i = 0; i < n; i++)
-// 		std::cout << " " << val[i];
-// 	std::cout << "\n";
-
-// 	// Using default std :: adjacent_difference
-// 	std::adjacent_difference(val, val + 7, result);
-// 	std::cout << "Using default adjacent_difference: ";
-// 	for (int i = 1; i < n; i++)
-// 		std::cout << result[i] << ' ';
-// 	std::cout << '\n';
-
-// 	return 0;
-// }
+	// 	std::cout << "Shortest span: " << std::endl;
+	// 	std::cout << span.shortestSpan() << std::endl;
+	// 	std::cout << "Longest span: " << std::endl;
+	// 	std::cout << span.longestSpan() << std::endl;
+	// }
+	// catch(const std::exception& e)
+	// {
+	// 	std::cerr << e.what() << '\n';
+	// }
