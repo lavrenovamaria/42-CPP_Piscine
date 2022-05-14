@@ -1,19 +1,20 @@
 #include "Span.hpp"
 #include <iostream>
 
-#define SIZE 6
+#define SIZE 10
 
 int main()
 {
 
 	try
 	{
-		Span sp = Span(6);
+		Span sp = Span(5);
 		sp.addNumber(5);
 		sp.addNumber(3);
 		sp.addNumber(17);
 		sp.addNumber(9);
 		sp.addNumber(11);
+
 
 		std::cout << "Shortest span: " << std::endl;
 		std::cout << sp.shortestSpan() << std::endl;
@@ -24,5 +25,6 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+
 	return 0;
 }

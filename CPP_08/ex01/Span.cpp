@@ -35,9 +35,8 @@ int Span::shortestSpan(){
 	std::vector<int> tmp(_vector);//сохраняем существующие элементы
 	std::sort(std::begin(tmp), std::end(tmp));
 	std::adjacent_difference(std::begin(tmp), std::end(tmp), std::begin(tmp));
-	std::transform(std::begin(tmp), std::end(tmp), std::begin(tmp), [] (int& i) { return std::abs(i); });
+	std::transform(std::begin(tmp), std::end(tmp), std::begin(tmp), [] ( const int& i) { return std::abs(i); });
 	return ((*std::min_element(std::begin(tmp), std::end(tmp))));
-
 }
 
 int Span::longestSpan(){
@@ -49,11 +48,11 @@ int Span::longestSpan(){
 }
 
 const char *Span::vectorIsFull::what() const throw(){
-	return("vector is full");
+	return("Vector is full");
 }
 
 const char *Span::vectorIsLessThanTwo::what() const throw(){
-	return("vector is less than two elements");
+	return("Vector is less than two elements");
 }
 
 Span::~Span(){}
