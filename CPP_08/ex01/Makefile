@@ -1,6 +1,6 @@
 NAME		= 	Span
 HDRS		=	Span.hpp
-SRCS 		= 	Span.cpp
+SRCS 		= 	Span.cpp main.cpp
 OBJS		=	$(patsubst %.cpp, %.o,$(SRCS))
 
 CC			= 	c++

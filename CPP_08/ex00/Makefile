@@ -4,7 +4,7 @@ SRCS 		= 	main.cpp
 OBJS		=	$(patsubst %.cpp, %.o,$(SRCS))
 
 CC			= 	c++
-FLAGS		= 	-Wall -Werror -Wextra -std=c++11 -Wshadow -g -fsanitize=address
+FLAGS		= 	-Wall -Werror -Wextra -std=c++98 -Wshadow -g -fsanitize=address
 
 all : $(NAME)
 
