@@ -12,7 +12,6 @@ int main(){
 	for(int i = 0; i < inputs.size(); i++) std::cout << inputs[i] << " ";
 	std::cout << "\n";
 	std::vector<int> tmp(inputs);
-	std::vector<int>::iterator count = tmp.begin();
 	std::sort(std::begin(tmp), std::end(tmp));
 	std::cout << "Sort array contains : ";
 	for(int i = 0; i < tmp.size(); i++) std::cout << tmp[i] << " ";
